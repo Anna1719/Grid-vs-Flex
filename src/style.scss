@@ -1,3 +1,8 @@
+$extra-big-screen: 1335.98px;
+$big-screen: 1092px;
+$mid-screen: 832px;
+$small-screen: 572px;
+
 h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -47,30 +52,30 @@ h3 {
         gap: 20px;
         padding: 20px;
 
-        @media(max-width: 1336px) {
+        @media(max-width: $extra-big-screen) {
             grid-template-columns: repeat(4, 1fr);
         }
 
-        @media(max-width: 1092px) {
+        @media(max-width: $big-screen) {
             grid-template-columns: repeat(6, 1fr);
         }
 
-        @media(max-width: 832px) {
+        @media(max-width: $mid-screen) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        @media(max-width: 572px) {
+        @media(max-width: $small-screen) {
             grid-template-columns: 1fr;
         }
 
         &-card {
-            @media(max-width: 1336px) {
+            @media(max-width: $extra-big-screen) {
                 &:nth-child(5) {
                     grid-column: 1 / -1;
                 }
             }
 
-            @media(max-width: 1092px) {
+            @media(max-width: $big-screen) {
 
                 &:nth-child(1),
                 &:nth-child(2),
@@ -84,7 +89,7 @@ h3 {
                 }
             }
 
-            @media(max-width: 832px) {
+            @media(max-width: $mid-screen) {
 
                 &:nth-child(1),
                 &:nth-child(2),
@@ -98,7 +103,7 @@ h3 {
                 }
             }
 
-            @media(max-width: 572px) {
+            @media(max-width: $small-screen) {
 
                 &:nth-child(1),
                 &:nth-child(2),

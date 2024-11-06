@@ -39,7 +39,7 @@ h3 {
   gap: 20px;
   padding: 20px;
 }
-@media (max-width: 1336px) {
+@media (max-width: 1335.98px) {
   .grid__container {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -59,7 +59,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 1336px) {
+@media (max-width: 1335.98px) {
   .grid__container-card:nth-child(5) {
     grid-column: 1/-1;
   }
