@@ -1,0 +1,119 @@
+$extra-big-screen: 1335.98px;
+$big-screen: 1092px;
+$mid-screen: 832px;
+$small-screen: 572px;
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.flex__container-card,
+.grid__container-card {
+    min-width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.flex {
+
+    &__title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+
+        &-card {
+            flex: 1 0 200px;
+        }
+    }
+}
+
+.grid {
+
+    &__title {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        padding: 20px;
+
+        @media(max-width: $extra-big-screen) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media(max-width: $big-screen) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @media(max-width: $mid-screen) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media(max-width: $small-screen) {
+            grid-template-columns: 1fr;
+        }
+
+        &-card {
+            @media(max-width: $extra-big-screen) {
+                &:nth-child(5) {
+                    grid-column: 1 / -1;
+                }
+            }
+
+            @media(max-width: $big-screen) {
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    grid-column: span 2;
+                }
+
+                &:nth-child(4),
+                &:nth-child(5) {
+                    grid-column: span 3;
+                }
+            }
+
+            @media(max-width: $mid-screen) {
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4) {
+                    grid-column: span 1;
+                }
+
+                &:nth-child(5) {
+                    grid-column: span 2;
+                }
+            }
+
+            @media(max-width: $small-screen) {
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5) {
+                    grid-column: span 2;
+                }
+            }
+
+        }
+    }
+}
